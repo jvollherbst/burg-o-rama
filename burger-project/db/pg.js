@@ -9,5 +9,5 @@ var connectionString = 'postgres://jasminecardoza:' + process.env.DB_PASSWORD + 
 
 
 
-module.exports.showBurgers = showBurgers;
-module.exports.addBurgers = addBurgers;
+// module.exports.showBurgers = showBurgers;
+// module.exports.addBurgers = addBurgers;

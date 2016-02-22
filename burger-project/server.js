@@ -14,6 +14,9 @@ app.use(bodyParser.json());
 app.use(logger('dev'));
 dotenv.load();
 
+// override with POST having ?_method=XXXX
+/* e.g. If we need to make a PUT,
+we'll POST to a url appended with ?_method=put */
 app.use(methodOverride('_method'))
 
 app.use(express.static(path.join(__dirname, './public/')))
@@ -21,11 +24,17 @@ app.set('views', './views')
 app.set('view engine', 'ejs')
 
 
+app.get('/', (req, res) => {
+  res.send('this is the homepage');
+});
 
 
 
 
 
+
+
+app.use('/burgers', require(path.join(__dirname, '/routes/burgers')));
 
 var port = process.env.PORT || 3000; //allows user to select their own port, does not fix a port
 var server = app.listen(port);
