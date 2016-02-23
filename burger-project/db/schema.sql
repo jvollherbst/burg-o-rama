@@ -1,10 +1,12 @@
-DROP TABLE IF EXISTS meat;
-DROP TABLE IF EXISTS buns;
-DROP TABLE IF EXISTS cheese;
-DROP TABLE IF EXISTS toppings;
+DROP TABLE IF EXISTS burgers_db;
+
 DROP TABLE IF EXISTS burgers;
 DROP TABLE IF EXISTS cheese_join;
 DROP TABLE IF EXISTS toppings_join;
+DROP TABLE IF EXISTS toppings;
+DROP TABLE IF EXISTS meat;
+DROP TABLE IF EXISTS buns;
+DROP TABLE IF EXISTS cheese;
 
 
 CREATE TABLE meat (
@@ -21,13 +23,13 @@ CREATE TABLE buns (
 
 CREATE TABLE cheese (
   cheese_id SERIAL PRIMARY KEY,
-  name text,
+  type text,
   available boolean
 );
 
 CREATE TABLE toppings (
   toppings_id SERIAL PRIMARY KEY,
-  name text,
+  type text,
   available boolean
 );
 
