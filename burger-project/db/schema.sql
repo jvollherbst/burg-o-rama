@@ -11,27 +11,26 @@ CREATE TABLE orders (
 
 CREATE TABLE meat (
   meat_id SERIAL UNIQUE PRIMARY KEY,
-  name text,
   type text,
-  availibility boolean
+  available boolean
 )
 
 CREATE TABLE buns (
   buns_id SERIAL UNIQUE PRIMARY KEY,
-  name text,
-  availibility boolean
+  type text,
+  available boolean
 )
 
 CREATE TABLE cheese (
   cheese_id SERIAL UNIQUE PRIMARY KEY,
   name text,
-  availibility boolean
+  available boolean
 )
 
 CREATE TABLE toppings (
   toppings_id SERIAL UNIQUE PRIMARY KEY,
   name text,
-  availibility boolean
+  available boolean
 )
 
 CREATE TABLE cheese_join(
