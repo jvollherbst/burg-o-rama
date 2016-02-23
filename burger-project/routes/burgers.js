@@ -11,29 +11,29 @@ var dumpMethod = (req, res) => {
 }
 
 burgers.route('/')
-  .get(function(req, res){
+  .get((req, res)=>{
     res.send({data: burgerData})
   })
 
-  .post(function(req, res){
+  .post((req, res)=>{
     burgerData.push(req.body)
     var newID = burgerData.length-1;
     res.redirect('./' + newID)
   })
 
 burgers.route('/new')
-  .get(function(req, res){
+  .get((req, res)=>{
     res.send('new burgers!')
   })
 
 burgers.route('/:id')
-  .get(function(req, res){
+  .get((req, res)=>{
     res.send('single burger!')
   })
 /*one burger update*/
   .put((req,res)=>{
     var bID = req.params.burgerID;
-    console.log("PUT", req.body)
+    // console.log("PUT", req.body)
     //replace the burger at :burgerID position
     burgerData[bID] = req.body;
     //redirect to the new burger
@@ -44,10 +44,15 @@ burgers.route('/:id')
       return;
     }
   })
-  .delete(dumpMethod)
+  .delete((req,res)=>{
+    var bID = req.params.burgerID;
+
+    burgerData.splice(bID, 1);
+    res.redirect('./')
+  })
 
 burgers.route('/:id/edit')
-  .get(function(req, res){
+  .get((req, res)=>{
     res.send('edit a single burger!')
   })
 
