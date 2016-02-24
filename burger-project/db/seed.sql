@@ -1,3 +1,4 @@
+
 INSERT INTO meat (type, available) VALUES ('bison', true);
 INSERT INTO meat (type, available) VALUES ('28-day dry-aged ground brisket', true);
 INSERT INTO meat (type, available) VALUES ('angus', true);

@@ -12,13 +12,15 @@ var dumpMethod = (req, res) => {
 
 burgers.route('/')
   .get((req, res)=>{
-    res.send({data: burgerData})
+    res.send('/', {data: burgerData})
   })
 
   .post((req, res)=>{
     burgerData.push(req.body)
     var newID = burgerData.length-1;
     res.redirect('./' + newID)
+    console.log(newID);
+
   })
 
 burgers.route('/new')
