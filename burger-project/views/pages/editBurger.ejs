@@ -14,9 +14,9 @@
     <div class="container">
 
       <div class="starter-template">
-        <h1>Create your Dream Burger</h1>
+        <h1><%= burgerForm.title %></h1>
         <p class="lead">Use this form to build a burger.</p>
-        <form class="form-horizontal" action="/burgers/" method="post">
+        <form class="form-horizontal" action="<%= burgerForm.burgerURL %>" method="<%= burgerForm.submitMethod %>">
         <fieldset>
 
 

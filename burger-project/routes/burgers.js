@@ -35,6 +35,7 @@ burgers.route('/new')
 
 burgers.route('/:id')
   .get((req, res)=>{
+    console.log('hit-----------burgersID.get')
     var bID = req.params.id;
     if(!(bID in burgerData)){ //if the id is not in our array, throw a 404
       res.sendStatus(404);
@@ -49,13 +50,11 @@ burgers.route('/:id')
 
 /*one burger update*/
   .put((req,res)=>{
+    console.log('hit-----------burgersID.put')
     var bID = req.params.id;
-    // console.log("PUT", req.body)
-    //replace the burger at :burgerID position
     burgerData[bID] = req.body;
-    //redirect to the new burger
+
     res.redirect('./' + bID)
-    // if we don't have a burger there, let's
     if(!(bID in burgerData)){
       res.sendStatus(404);
       return;
@@ -71,6 +70,7 @@ burgers.route('/:id')
 
 burgers.route('/:id/edit')
 .get((req, res)=>{
+  console.log('hit-----------burgers.get')
   res.render('pages/editBurger.ejs', {
   burgerForm:{
     title:'Edit your Dream Burger',
