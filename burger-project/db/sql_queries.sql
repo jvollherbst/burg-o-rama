@@ -18,3 +18,11 @@ ON
 burgers.buns_id = buns.buns_id
 GROUP BY
 buns.type
+
+SELECT
+DISTINCT cheese.type
+FROM burgers
+LEFT JOIN
+cheese
+ON
+ 

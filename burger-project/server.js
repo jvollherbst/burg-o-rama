@@ -36,6 +36,10 @@ app.get('/', (req, res) => {
 
 
 app.use('/burgers', require(path.join(__dirname, '/routes/burgers')));
+app.use('/burgers', require(path.join(__dirname, '/routes/meats')));
+app.use('/burgers', require(path.join(__dirname, '/routes/toppings')));
+app.use('/burgers', require(path.join(__dirname, '/routes/buns')));
+app.use('/burgers', require(path.join(__dirname, '/routes/cheese')));
 
 var port = process.env.PORT || 3000; //allows user to select their own port, does not fix a port
 var server = app.listen(port);
